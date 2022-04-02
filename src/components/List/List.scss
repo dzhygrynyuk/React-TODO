@@ -1,0 +1,81 @@
+.list{
+    $self: &;
+
+    margin-bottom: 30px;
+
+    &__add-button{    
+        svg{
+            path{
+                stroke: #868686;
+            }
+        }
+        span{
+            color: #767676;
+        }
+
+        &:hover{
+            svg{
+                path{
+                    stroke: #000;
+                }
+            }
+            span{
+                color: #000;
+            }
+        }
+    }
+
+    &__remove-icon{
+        opacity: 0;
+    }
+
+    li{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px 12px;
+        transition: background-color 0.15s ease-in-out;
+
+        &:hover{
+            background: rgba(255,255,255,0.5);
+
+            #{$self}__remove-icon{
+                opacity: 0.2;
+            }
+        }
+
+        #{$self}__remove-icon{
+            opacity: 0;
+            transition: opacity 0.15s ease-in-out;
+
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+
+        &.active{
+            background: #FFFFFF;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+        }
+
+        i{
+            display: inline-flex;
+            margin-right: 8px;
+            svg{
+                path{
+                    fill: #7c7c7c
+                }
+            }
+        }
+
+        .badge{
+            position: relative;
+            left: 5px;
+        }
+
+        span{
+            flex: 1;
+        }
+    }
+}
