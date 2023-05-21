@@ -4,7 +4,15 @@ import classNames from "classnames";
 
 import './List.scss';
 
-const List = ({items, isRemoveble, onClick}) => {
+import RemoveSvg from '../../assets/img/remove.svg'
+
+const List = ({items, isRemoveble, onClick, onRemove}) => { 
+
+    const removeListItem = (item) => {
+        if(window.confirm('Confirm deletion of the item')){
+            onRemove(item);
+        }
+    }
     return (
         <ul onClick={onClick} className='list'>
             { items.map( (item, index) => (
@@ -17,7 +25,14 @@ const List = ({items, isRemoveble, onClick}) => {
                         )}
                     </i>
                     <span>{item.name}</span>
-                </li> 
+                    {isRemoveble && 
+                        <img 
+                            className="list__remove-icon" 
+                            src={RemoveSvg} 
+                            alt="Remove icon"
+                            onClick={() => removeListItem(item)}
+                        />}
+                </li>
             )) }
         </ul>
     );

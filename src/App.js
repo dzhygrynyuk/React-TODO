@@ -31,6 +31,7 @@ function App() {
       />
       <List 
         items={lists}
+        onRemove={item => console.log(item)}
         isRemoveble
       />
       <AddList 
