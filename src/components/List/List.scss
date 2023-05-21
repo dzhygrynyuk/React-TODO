@@ -1,6 +1,28 @@
 .list{
   margin-bottom: 30px;
 
+  &__add-button{    
+    svg{
+      path{
+        stroke: #868686;
+      }
+    }
+    span{
+      color: #767676;
+    }
+
+    &:hover{
+      svg{
+        path{
+          stroke: #000;
+        }
+      }
+      span{
+        color: #000;
+      }
+    }
+  }
+
   li{
     display: flex;
     align-items: center;
