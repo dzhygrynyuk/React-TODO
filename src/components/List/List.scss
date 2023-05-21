@@ -49,21 +49,10 @@
     .badge{
       position: relative;
       left: 5px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-  
-      &--green{
-        background-color: #42B883;
-      }
-  
-      &--red{
-        background-color: #64C4ED;
-      }
-  
-      &--pink{
-        background-color: #FFBBCC;
-      }
+    }
+
+    span{
+      flex: 1;
     }
   }
 }
