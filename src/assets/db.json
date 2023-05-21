@@ -2,36 +2,36 @@
     "lists": [
       {
         "id": 1,
-        "name": "Продажи",
+        "name": "Shopping",
         "colorId": 5
       },
       {
         "id": 2,
-        "name": "Фронтенд",
+        "name": "Front-end",
         "colorId": 4
       },
       {
         "id": 3,
-        "name": "Фильмы и сериалы",
+        "name": "Backend-end",
         "colorId": 3
       },
       {
         "id": 4,
-        "name": "Книги",
+        "name": "Books",
         "colorId": 2
       },
       {
         "id": 5,
-        "name": "Личное",
+        "name": "Films and serials",
         "colorId": 1
       },
       {
-        "name": "Спорт",
+        "name": "Sport",
         "colorId": 3,
         "id": 6
       },
       {
-        "name": "Курс по ReactJS ToDo",
+        "name": "React JS Course",
         "colorId": 7,
         "id": 7
       }
