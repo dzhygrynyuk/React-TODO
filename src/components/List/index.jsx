@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+
 import Badge from "../Badge";
 import classNames from "classnames";
 
@@ -10,7 +12,9 @@ const List = ({items, isRemoveble, onClick, onRemove}) => {
 
     const removeListItem = (item) => {
         if(window.confirm('Confirm deletion of the item')){
-            onRemove(item);
+            axios.delete('http://localhost:3001/lists/' + item.id).then(() => {
+                onRemove(item.id);
+            });
         }
     }
     return (

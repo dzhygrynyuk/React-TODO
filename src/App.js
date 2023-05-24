@@ -34,7 +34,10 @@ function App() {
       />
       {lists && <List 
         items={lists}
-        onRemove={item => console.log(item)}
+        onRemove={id => {
+          const newLists = lists.filter(item => item.id !== id);
+          setLists(newLists);
+        }}
         isRemoveble
       />}
       <AddList 
