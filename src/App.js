@@ -45,6 +45,23 @@ function App() {
     setLists(newList);
   }
 
+  const onRemoveTask = (listId, taskId) => {
+    if(window.confirm('Confirm the task deletion')){
+      const newList = lists.map(list => {
+        if(list.id === listId){
+          list.tasks = list.tasks.filter(task => task.id !== taskId);
+        }
+        return list;
+      });
+      setLists(newList);
+      axios
+        .delete('http://localhost:3001/tasks/' + taskId)
+        .catch(() => {
+          alert('Failed to delete task.');
+        });
+    }
+  }
+
   useEffect(() => {
     const listId = location.pathname.split('lists/')[1];
     if(lists){
@@ -94,6 +111,7 @@ function App() {
               list={list}
               onEditTitle={onEditListTitle}
               onAddTask={onAddTask}
+              onRemoveTask={onRemoveTask}
               withoutEmpty
             />
           ))
@@ -104,6 +122,7 @@ function App() {
               list={activeItem}
               onEditTitle={onEditListTitle}
               onAddTask={onAddTask}
+              onRemoveTask={onRemoveTask}
             />
         } />
       </Routes>
