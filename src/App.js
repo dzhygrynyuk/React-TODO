@@ -21,6 +21,16 @@ function App() {
     setLists(newList);
   }
 
+  const onAddTask = (listId, taskObj) => {
+    const newList = lists.map(item => {
+      if(item.id === listId){
+        item.tasks = [...item.tasks, taskObj];
+      }
+      return item;
+    });
+    setLists(newList);
+  }
+
   const onEditListTitle = (id, title) => {
     const newList = lists.map(item => {
       if(item.id === id){
@@ -65,6 +75,7 @@ function App() {
         <Tasks 
           list={activeItem}
           onEditTitle={onEditListTitle}
+          onAddTask={onAddTask}
         />
       }
     </div>
