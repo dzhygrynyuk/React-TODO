@@ -47,25 +47,25 @@
     {
       "listId": 4,
       "text": "The Da Vinci Code [Dan Brown]",
-      "completed": false,
+      "completed": true,
       "id": 5
     },
     {
       "listId": 4,
       "text": "Inferno [Dan Drown]",
-      "completed": false,
+      "completed": true,
       "id": 6
     },
     {
       "listId": 4,
       "text": "1984 [George Orwell]",
-      "completed": false,
+      "completed": true,
       "id": 7
     },
     {
       "listId": 5,
       "text": "Vikings",
-      "completed": false,
+      "completed": true,
       "id": 8
     },
     {

@@ -74,6 +74,29 @@ function App() {
       });
   }
 
+  const onCompleteTask = (listId, taskId, completed) => {
+    const newList = lists.map(list => {
+      if(list.id === listId){
+        list.tasks = list.tasks.map(task => {
+          if(task.id === taskId){
+            task.completed = completed;
+          }
+          return task;
+        });
+      }
+      return list;
+    });
+    setLists(newList);
+
+    axios
+      .patch('http://localhost:3001/tasks/' + taskId, {
+        completed
+      })
+      .catch(() => {
+        alert('Failed to update task status.');
+      });
+  }
+
   const onRemoveTask = (listId, taskId) => {
     if(window.confirm('Confirm the task deletion')){
       const newList = lists.map(list => {
@@ -145,6 +168,7 @@ function App() {
                 onAddTask={onAddTask}
                 onEditTask={onEditTask}
                 onRemoveTask={onRemoveTask}
+                onCompleteTask={onCompleteTask}
                 withoutEmpty
               />
             ))
@@ -157,6 +181,7 @@ function App() {
                 onAddTask={onAddTask}
                 onEditTask={onEditTask}
                 onRemoveTask={onRemoveTask}
+                onCompleteTask={onCompleteTask}
               />
           } />
         </Routes>
