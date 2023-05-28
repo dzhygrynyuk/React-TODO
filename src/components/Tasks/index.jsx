@@ -8,7 +8,7 @@ import './Tasks.scss';
 
 import editSvg from '../../assets/img/edit.svg';
 
-const Tasks = ({list, onEditTitle, onAddTask, onRemoveTask, withoutEmpty}) => {
+const Tasks = ({list, onEditTitle, onAddTask, onEditTask, onRemoveTask, withoutEmpty}) => {
 
     const editTitle = () => {
         const newTitle = window.prompt('Name of list', list.name);
@@ -33,6 +33,7 @@ const Tasks = ({list, onEditTitle, onAddTask, onRemoveTask, withoutEmpty}) => {
                     <Task 
                         key={task.id}
                         list={list}
+                        onEdit={onEditTask}
                         onRemove={onRemoveTask}
                         {...task} 
                     />

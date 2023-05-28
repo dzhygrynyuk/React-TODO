@@ -1,6 +1,6 @@
 import React from "react";
 
-const Task = ({id, text, list, onRemove}) => {
+const Task = ({id, text, list, onEdit, onRemove}) => {
     return(
         <div key={id} className="tasks__items-row">
             <div className="checkbox">
@@ -13,7 +13,7 @@ const Task = ({id, text, list, onRemove}) => {
             </div>
             <p>{text}</p>
             <div className="tasks__items-row-actions">
-                <div>
+                <div onClick={() => onEdit(list.id, {id, text})}>
                     <svg
                         width="15"
                         height="15"

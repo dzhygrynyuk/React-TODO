@@ -35,7 +35,7 @@
     {
       "id": 3,
       "listId": 2,
-      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
+      "text": "ReactJS Hooks (useState, useReducer, useEffect)",
       "completed": true
     },
     {
