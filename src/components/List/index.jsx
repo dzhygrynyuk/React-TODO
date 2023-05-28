@@ -8,7 +8,7 @@ import './List.scss';
 
 import RemoveSvg from '../../assets/img/remove.svg'
 
-const List = ({items, isRemoveble, onClick, onRemove}) => { 
+const List = ({items, isRemoveble, onClick, onRemove, onClickItem, activeItem}) => { 
 
     const removeListItem = (item) => {
         if(window.confirm('Confirm deletion of the item')){
@@ -18,9 +18,13 @@ const List = ({items, isRemoveble, onClick, onRemove}) => {
         }
     }
     return (
-        <ul className='list'>
+        <ul onClick={onClick} className='list'>
             { items.map( (item, index) => (
-                <li onClick={onClick} key={index} className={classNames(item.className, {'active': item.active})}>
+                <li 
+                    key={index} 
+                    className={classNames(item.className, {'active': activeItem && activeItem.id === item.id})}
+                    onClick={onClickItem ? () => onClickItem(item) : null}
+                >
                     <i>
                         {item.icon ? (
                             item.icon

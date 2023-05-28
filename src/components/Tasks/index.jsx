@@ -9,7 +9,8 @@ const Tasks = ({list}) => {
         <div className='tasks'>
             <h2 className='tasks__title'>{list.name} <img src={editSvg} alt="Edit" /></h2>
             <div className="tasks__items">
-                { list.tasks.map(task => (
+                {!list.tasks.length && <h3>There are no tasks.</h3>}
+                {list.tasks.map(task => (
                     <div key={task.id} className="tasks__items-row">
                         <div className="checkbox">
                             <input id={`task-${task.id}`} type="checkbox" />

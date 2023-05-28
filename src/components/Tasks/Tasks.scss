@@ -27,6 +27,16 @@
     &__items{
         margin-top: 30px;
 
+        h3{
+            font-family: Montserrat;
+            font-weight: bold;
+            font-size: 22px;
+            color: #c9d1d3;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
         &-row{
             display: flex;
             align-items: center;
